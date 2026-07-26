@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Blackout</string>
+
+    <!-- Показывается системой в списке accessibility-сервисов, под тумблером. -->
+    <string name="service_description">Перехватывает зажатие кнопок громкости и накрывает экран чёрным оверлеем, чтобы музыка играла в темноте. Содержимое экрана не читает.</string>
+
+    <string name="action_accessibility_settings">Открыть настройки Accessibility</string>
+    <string name="action_blackout_now">Затемнить сейчас</string>
+    <string name="action_blackout_delayed">Затемнить через %1$d с</string>
+    <string name="action_blackout_cancel">Отменить отсчёт</string>
+
+    <string name="status_on">Сервис активен.\n\nЗажми кнопку громкости (~0,6 с) при играющем звуке — экран станет чёрным. Ещё раз — вернётся.\nКороткие нажатия громкости работают как обычно.\nАварийный выход: тройной тап по чёрному экрану.</string>
+    <string name="status_off">Сервис выключен.\n\nНажми кнопку ниже и включи Blackout в списке сервисов.</string>
+
+    <string name="toast_service_off">Сначала включи сервис в Accessibility</string>
+    <string name="toast_timer_started">Отсчёт пошёл: ставь трек и клади телефон</string>
+    <string name="toast_timer_cancelled">Отсчёт отменён</string>
+</resources>

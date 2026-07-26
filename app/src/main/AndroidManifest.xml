@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ни одного uses-permission. Весь доступ приложения — это один тумблер
+     accessibility-сервиса в системных настройках. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Material">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- exported="true" обязателен для компонентов с intent-filter (targetSdk 31+),
+             но привязаться к сервису может только система: это гарантирует permission
+             BIND_ACCESSIBILITY_SERVICE, который выдаётся исключительно ей. -->
+        <service
+            android:name=".BlackoutAccessibilityService"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/blackout_accessibility" />
+        </service>
+    </application>
+</manifest>

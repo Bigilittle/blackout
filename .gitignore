@@ -1,0 +1,13 @@
+*.iml
+.gradle/
+.idea/
+build/
+captures/
+.cxx/
+.externalNativeBuild/
+local.properties
+
+# Ключ подписи и пароли к нему в репозитории делать нечего
+keystore.properties
+*.jks
+*.keystore

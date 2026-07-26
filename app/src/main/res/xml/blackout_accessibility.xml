@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Паспорт сервиса: ровно то, что система разрешит ему делать. Читается за минуту и
+    ровно этим приложение и интересно.
+
+    canRequestFilterKeyEvents + flagRequestFilterKeyEvents — перехват хардварных клавиш,
+    единственное, что сервису нужно.
+
+    canRetrieveWindowContent="false" — читать содержимое экрана он не может даже
+    теоретически.
+
+    accessibilityEventTypes не указан вовсе: сервис не подписан ни на один тип событий,
+    поэтому onAccessibilityEvent() не вызывается никогда.
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/service_description"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:canRetrieveWindowContent="false"
+    android:canRequestFilterKeyEvents="true"
+    android:accessibilityFlags="flagRequestFilterKeyEvents" />
